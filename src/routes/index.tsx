@@ -11,23 +11,23 @@ import Testimonials from "@/sections/testimonials/testimonials";
 import Works from "@/sections/works/works";
 
 export const Route = createFileRoute("/")({
-	loader: () => getAllPostsMeta(),
-	component: App,
+  loader: () => getAllPostsMeta(),
+  component: App,
 });
 
 function App() {
-	const posts = Route.useLoaderData();
-	return (
-		<main className="mx-auto flex flex-col items-center justify-start w-full md:w-7xl md:border-x border-border divide-y divide-border/80">
-			<Hero />
-			<Services />
-			<Works />
-			<Showcase />
-			<Testimonials />
-			<FAQ />
-			<Blog posts={posts} />
-			<Contact />
-			<Footer />
-		</main>
-	);
+  const posts = Route.useLoaderData();
+  return (
+    <main className="mx-auto flex flex-col items-center justify-start w-full md:w-7xl md:border-x border-border divide-y divide-border/80">
+      <Hero />
+      <Services />
+      <Works />
+      {/*<Showcase />*/}
+      <Testimonials />
+      <FAQ />
+      <Blog posts={posts} />
+      <Contact />
+      <Footer />
+    </main>
+  );
 }
