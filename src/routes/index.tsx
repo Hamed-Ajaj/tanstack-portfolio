@@ -6,8 +6,8 @@ import FAQ from "@/sections/faq/faq";
 import Footer from "@/sections/footer/footer";
 import Hero from "@/sections/hero/hero";
 import Services from "@/sections/services/services";
-import Showcase from "@/sections/showcase/showcase";
-import Testimonials from "@/sections/testimonials/testimonials";
+// import Showcase from "@/sections/showcase/showcase";
+// import Testimonials from "@/sections/testimonials/testimonials";
 import Works from "@/sections/works/works";
 
 export const Route = createFileRoute("/")({
@@ -23,7 +23,7 @@ function App() {
       <Services />
       <Works />
       {/*<Showcase />*/}
-      <Testimonials />
+      {/* <Testimonials /> */}
       <FAQ />
       <Blog posts={posts} />
       <Contact />

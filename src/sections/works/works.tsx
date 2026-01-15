@@ -2,7 +2,6 @@ import { GridIcon } from "@radix-ui/react-icons";
 import Section from "@/components/layout/section";
 import { works } from "@/sections/works/_constants/works";
 import WorksCard from "./_components/works-card";
-import { Button } from "@/components/ui/button";
 
 export default function Works() {
   return (
