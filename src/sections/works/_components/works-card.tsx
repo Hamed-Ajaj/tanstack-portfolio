@@ -26,12 +26,12 @@ export default function WorksCard({
         <div className="absolute bottom-0 left-0 right-0 flex flex-wrap items-end justify-between gap-3 p-4">
           <div className="flex-1 min-w-0">
             <CardTitle
-              className={`${title === "Better news" || "Pitch Startup" ? "text-black" : "text-primary"}`}
+              className={`${title === "Better news" || "Pitch Startup" ? "text-black" : "text-primary"} hidden sm:block`}
             >
               {title}
             </CardTitle>
             <CardDescription
-              className={`${title === "Better news" || "Pitch Startup" ? "text-black/45" : "text-primary/45"} max-w-[400px]`}
+              className={`${title === "Better news" || "Pitch Startup" ? "text-black/45" : "text-primary/45"} max-w-[400px] hidden sm:block`}
             >
               {description}
             </CardDescription>

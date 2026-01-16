@@ -27,10 +27,10 @@ export default function Footer() {
               <LogoIcon className="size-4" />
               <p className="text-sm font-medium">Hamed Ajaj</p>
             </div>
-            <p className="text-xs text-foreground/70 leading-relaxed max-w-xs">
-              Use this placeholder copy to describe your focus, niche, or the
-              type of projects you love working on.
-            </p>
+            {/* <p className="text-xs text-foreground/70 leading-relaxed max-w-xs"> */}
+            {/*   Use this placeholder copy to describe your focus, niche, or the */}
+            {/*   type of projects you love working on. */}
+            {/* </p> */}
           </div>
 
           <div className="flex items-center gap-3">
@@ -70,7 +70,10 @@ export default function Footer() {
       <div className="text-xs text-foreground/70 border-t border-border/80">
         <div className="w-full space-y-2 md:space-y-0 md:max-w-5xl mx-auto flex flex-col md:flex-row gap-1 px-4 py-4 md:px-2 items-center justify-between">
           <p>© {currentYear} Hamed Ajaj. All rights reserved.</p>
-          <p>Full-stack developer for small businesses & startups. Open to freelance and side projects.</p>
+          <p>
+            Full-stack developer for small businesses & startups. Open to
+            freelance and side projects.
+          </p>
         </div>
       </div>
     </footer>

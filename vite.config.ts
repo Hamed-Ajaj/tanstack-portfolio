@@ -1,10 +1,11 @@
-import { defineConfig } from 'vite'
-import { devtools } from '@tanstack/devtools-vite'
-import { tanstackStart } from '@tanstack/react-start/plugin/vite'
-import viteReact from '@vitejs/plugin-react'
-import viteTsConfigPaths from 'vite-tsconfig-paths'
-import tailwindcss from '@tailwindcss/vite'
-import { nitro } from 'nitro/vite'
+import { defineConfig } from "vite";
+import { devtools } from "@tanstack/devtools-vite";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import netlify from "@netlify/vite-plugin-tanstack-start"; // ← add this
+import viteReact from "@vitejs/plugin-react";
+import viteTsConfigPaths from "vite-tsconfig-paths";
+import tailwindcss from "@tailwindcss/vite";
+import { nitro } from "nitro/vite";
 import contentCollections from "@content-collections/vite";
 import mdx from "@mdx-js/rollup";
 import remarkGfm from "remark-gfm";
@@ -25,12 +26,13 @@ export default defineConfig(({ command, mode }) => {
                 inline: ["react-reconciler", "its-fine"],
               },
             }
-          : undefined
+          : undefined,
       ),
       contentCollections(),
       viteTsConfigPaths({ projects: ["./tsconfig.json"] }),
       tailwindcss(),
       tanstackStart(),
+      netlify(),
       viteReact(),
       mdx({
         remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter],

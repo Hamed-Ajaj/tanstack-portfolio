@@ -7,10 +7,10 @@ export interface WorksItem {
 
 export const works: WorksItem[] = [
   {
-    image: "/mern-stacker-banner.png",
+    image: "/mern-stacker-banner.webp",
     title: "mern-stacker",
     description:
-      "MERN Stacker is a CLI tool that scaffolds a modern MERN-style project with a React + Vite frontend and an Express backend.",
+      "MERN Stacker is a CLI tool that scaffolds a modern MERN-style project ",
     link: "https://github.com/Hamed-Ajaj/mern-stacker",
   },
   {
