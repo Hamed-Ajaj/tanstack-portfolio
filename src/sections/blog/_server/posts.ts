@@ -8,6 +8,8 @@ export type PostMeta = {
 	date: string;
 	excerpt?: string;
 	tags?: string[];
+	lang?: string;
+	dir?: "ltr" | "rtl" | "auto";
 	readingTime: string;
 };
 
@@ -24,6 +26,8 @@ export const getAllPostsMeta = createServerFn({ method: "GET" }).handler(
 					date: post.date ?? "",
 					excerpt: post.excerpt ?? "",
 					tags: post.tags ?? [],
+					lang: post.lang,
+					dir: post.dir,
 					readingTime: readingTime(content).text,
 				} satisfies PostMeta;
 			})

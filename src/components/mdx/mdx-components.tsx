@@ -104,8 +104,9 @@ function InlineCode({
 	return (
 		<code
 			{...props}
+			dir="ltr"
 			className={cn(
-				"rounded-md border border-border/80 bg-card-muted/60 px-1.5 py-0.5 font-mono text-xs text-foreground",
+				"rounded-md border border-border/80 bg-card-muted/60 px-1.5 py-0.5 font-mono text-xs text-foreground text-left",
 				className,
 			)}
 		>
@@ -126,8 +127,9 @@ function BlockCode({
 			<CopyCodeButton code={codeText} className="absolute right-2 top-2" />
 			<code
 				{...props}
+				dir="ltr"
 				className={cn(
-					"block overflow-x-auto p-4 pr-12 font-mono text-xs text-foreground/70",
+					"block overflow-x-auto p-4 pr-12 font-mono text-xs text-foreground/70 text-left",
 					className,
 				)}
 			>
@@ -329,7 +331,7 @@ export const mdxComponents = {
 		<ul
 			{...props}
 			className={cn(
-				"my-4 ml-6 list-disc space-y-1.5 text-sm leading-relaxed text-foreground/70 marker:text-foreground/45",
+				"my-4 ps-6 list-disc space-y-1.5 text-sm leading-relaxed text-foreground/70 marker:text-foreground/45",
 				className,
 			)}
 		>
@@ -344,7 +346,7 @@ export const mdxComponents = {
 		<ol
 			{...props}
 			className={cn(
-				"my-4 ml-6 list-decimal space-y-1.5 text-base leading-relaxed text-foreground/70 marker:text-foreground/45",
+				"my-4 ps-6 list-decimal space-y-1.5 text-base leading-relaxed text-foreground/70 marker:text-foreground/45",
 				className,
 			)}
 		>
@@ -445,10 +447,11 @@ export const mdxComponents = {
 		return (
 			<pre
 				{...props}
+				dir="ltr"
 				className={cn(
 					isPrettyCodeBlock
-						? "my-0 rounded-none border-0 bg-transparent p-0 font-mono text-sm leading-relaxed text-foreground"
-						: "relative my-4 rounded-lg border border-border bg-card p-4 font-mono text-sm leading-relaxed text-foreground/70 card-highligh overflow-x-auto",
+						? "my-0 rounded-none border-0 bg-transparent p-0 font-mono text-sm leading-relaxed text-foreground text-left"
+						: "relative my-4 rounded-lg border border-border bg-card p-4 font-mono text-sm leading-relaxed text-foreground/70 text-left card-highligh overflow-x-auto",
 					className,
 				)}
 			>

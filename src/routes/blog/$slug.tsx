@@ -23,13 +23,23 @@ export const Route = createFileRoute("/blog/$slug")({
 	component: BlogPost,
 });
 
+const RTL_LANGUAGE_PREFIXES = ["ar", "fa", "he", "ur"];
+
 function BlogPost() {
 	const meta = Route.useLoaderData();
 	const { slug } = Route.useParams();
+	const contentLang = meta.lang?.trim() || undefined;
+	const contentDir =
+		meta.dir ??
+		(contentLang &&
+		RTL_LANGUAGE_PREFIXES.some((prefix) => contentLang.startsWith(prefix))
+			? "rtl"
+			: "ltr");
+	const isRtl = contentDir === "rtl";
 	const publishedDate = meta.date ? new Date(meta.date) : null;
 	const formattedDate =
 		publishedDate && !Number.isNaN(publishedDate.getTime())
-			? new Intl.DateTimeFormat("en-US", {
+			? new Intl.DateTimeFormat(contentLang ?? "en-US", {
 					month: "long",
 					day: "numeric",
 					year: "numeric",
@@ -43,13 +53,19 @@ function BlogPost() {
 
 	return (
 		<main className="mx-auto flex w-full flex-col items-center justify-start md:w-7xl md:border-x border-border divide-y divide-border/80">
-			<article className="flex w-full flex-col text-foreground">
+			<article
+				className="flex w-full flex-col text-foreground"
+				lang={contentLang}
+				dir={contentDir}
+			>
 				<div className="relative w-full overflow-hidden border-b border-border/80">
 					<div className="h-[50vh] w-full pointer-events-none">
 						<Background />
 					</div>
-					<div className="absolute bottom-4 left-4 flex flex-col gap-4 md:bottom-8 md:left-8">
-						<header className="flex flex-col gap-4 px-4 py-8 md:px-8">
+					<div className="absolute inset-x-4 bottom-4 flex flex-col gap-4 md:inset-x-8 md:bottom-8">
+						<header
+							className={`flex flex-col gap-4 px-4 py-8 md:px-8 ${isRtl ? "items-end text-right" : "items-start text-left"}`}
+						>
 							{formattedDate ? (
 								<span className="text-xs font-medium text-foreground/45">
 									{formattedDate}
@@ -63,11 +79,16 @@ function BlogPost() {
 									{meta.excerpt}
 								</p>
 							) : null}
-							<div className="flex flex-wrap items-center text-sm text-foreground/70">
+							<div
+								className="flex flex-wrap items-center text-sm text-foreground/70"
+								dir="ltr"
+							>
 								{meta.readingTime}
 							</div>
 							{tags.length ? (
-								<div className="flex flex-wrap gap-2">
+								<div
+									className={`flex flex-wrap gap-2 ${isRtl ? "justify-end" : "justify-start"}`}
+								>
 									{tags.map((tag: string) => (
 										<Badge
 											key={tag}
@@ -87,7 +108,7 @@ function BlogPost() {
 				<section className="mx-auto flex w-full max-w-5xl flex-col px-4 py-8 md:p-8 md:border-x border-b border-border/80 border-dashed">
 					<div className="min-h-[200px]">
 						<Suspense fallback={<ArticleSkeleton />}>
-							<PostContent slug={slug} />
+							<PostContent slug={slug} lang={contentLang} dir={contentDir} />
 						</Suspense>
 					</div>
 				</section>
@@ -97,9 +118,21 @@ function BlogPost() {
 	);
 }
 
-function PostContent({ slug }: { slug: string }) {
+function PostContent({
+	slug,
+	lang,
+	dir,
+}: {
+	slug: string;
+	lang?: string;
+	dir: "ltr" | "rtl" | "auto";
+}) {
 	const { data: Post } = useSuspenseQuery(blogPostQueryOptions(slug));
-	return <Post />;
+	return (
+		<div lang={lang} dir={dir}>
+			<Post />
+		</div>
+	);
 }
 
 const tagSkeletonKeys = ["tag-1", "tag-2", "tag-3", "tag-4"];
