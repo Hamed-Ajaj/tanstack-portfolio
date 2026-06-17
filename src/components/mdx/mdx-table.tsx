@@ -114,7 +114,7 @@ export const MdxTable: React.FC<MdxTableProps> = ({
 			<div className="relative my-8 w-full overflow-x-auto rounded-2xl border border-border/80 bg-card shadow-md card-highlight">
 				<table
 					className={cn(
-						"w-full border-collapse text-left text-sm text-foreground/70",
+						"w-full border-collapse [text-align:start] text-sm text-foreground/70",
 						className,
 					)}
 					{...props}

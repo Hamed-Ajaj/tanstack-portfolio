@@ -32,7 +32,7 @@ export default defineConfig(({ command, mode }) => {
       viteTsConfigPaths({ projects: ["./tsconfig.json"] }),
       tailwindcss(),
       tanstackStart(),
-      netlify(),
+      // netlify(),
       viteReact(),
       mdx({
         remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMdxFrontmatter],
