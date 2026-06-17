@@ -8,20 +8,14 @@ export default function Works() {
     /* biome-ignore lint/correctness/useUniqueElementIds: anchor target appears once */
     <Section
       id="works"
-      title="Preview a few highlight projects"
-      description="Swap in real case studies that show your range — from product builds to creative experiments."
+      title="Featured Case Studies"
+      description="Explore a selection of real-world software projects built to solve operational challenges and support business growth."
       className="grid grid-cols-1 gap-4"
       badgeText="Featured projects"
       badgeIcon={<GridIcon aria-hidden="true" className="size-3.5" />}
     >
       {works.map((item) => (
-        <WorksCard
-          key={item.title}
-          image={item.image}
-          title={item.title}
-          description={item.description}
-          link={item.link}
-        />
+        <WorksCard key={item.title} {...item} />
       ))}
       <div className="flex w-full justify-end">
         <a

@@ -10,7 +10,7 @@ export default function Services() {
     <Section
       id="services"
       title="Scalable design for modern apps"
-      description="High-performance applications built with React, Next.js, Node ,combining clean architecture, seamless UX, and scalable, maintainable code."
+      description="I help businesses replace spreadsheets, paperwork, and disconnected tools with software built for efficiency and growth."
       className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
       badgeText="What you do"
       badgeIcon={<StarIcon aria-hidden="true" />}

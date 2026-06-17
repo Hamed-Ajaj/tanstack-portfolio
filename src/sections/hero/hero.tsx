@@ -179,20 +179,21 @@ export default function Hero() {
         <div ref={badgeRef} className="w-fit">
           <ShinyBadge>
             <FrameIcon aria-hidden="true" className="size-3.5" />
-            Full Stack Developer
+            Custom Software For Businesses
           </ShinyBadge>
         </div>
         <h1
           ref={titleRef}
           className="text-3xl text-center text-foreground font-medium text-balance max-w-3xl"
         >
-          Full-Stack Developer Helping You Build, Launch, and Scale Your Ideas
+          Custom software that helps your business run smoother and grow faster
         </h1>
         <p
           ref={descriptionRef}
           className="text-base md:text-lg text-center text-foreground/70 font-medium text-balance leading-relaxed max-w-xl"
         >
-          Full-stack developer building clean and modern web apps for small businesses and startups.
+          I design and build business software that replaces manual processes,
+          simplifies operations, and helps teams work more efficiently.
         </p>
       </div>
       <div ref={actionsRef} className="relative z-10  flex items-center gap-2">
@@ -201,16 +202,19 @@ export default function Hero() {
           size="md"
           onClick={() => scrollTo("#contact")}
         >
-          Start a project
+          Let's discuss your project
         </Button>
         <Button
           variant="secondary"
           size="md"
           onClick={() => scrollTo("#works")}
         >
-          Explore Work
+          View selected work
         </Button>
       </div>
+      <p className="relative z-10 text-center text-sm font-medium text-foreground/55 text-balance max-w-lg">
+        Built systems for clinics, organizations, and service businesses.
+      </p>
 
       <div className="absolute inset-0 z-0 h-full w-full pointer-events-none">
         <Background />

@@ -87,7 +87,7 @@ export const footerSocialLinks: FooterSocialLink[] = [
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/hamedthedev21/",
+    href: "https://www.instagram.com/hamedthedev/",
     icon: IconInstagram,
   },
   {

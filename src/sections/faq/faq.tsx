@@ -34,8 +34,8 @@ export default function FAQ() {
     /* biome-ignore lint/correctness/useUniqueElementIds: anchor target appears once */
     <Section
       id="faq"
-      title="Answer common pre-project questions"
-      description="Explain your process, timelines, and collaboration style so leads know what to expect before reaching out."
+      title="Frequently Asked Questions"
+      description="Answers to the questions clients usually ask before starting a project together."
       className="flex flex-col gap-6"
       badgeText="FAQ"
       badgeIcon={

@@ -1,98 +1,60 @@
 export interface FaqItem {
-  question: string;
-  answer: string;
+	question: string;
+	answer: string;
 }
 
-export const faqItems: FaqItem[] = [
-  {
-    question:
-      "What kind of frontend development services do you specialize in, and what technologies do you primarily use?",
-    answer:
-      "I focus on building modern, high-performance web applications with an emphasis on clean architecture, smooth interactions, and strong visual appeal. My core stack includes React, TypeScript, and Next.js, along with tools like Tailwind CSS and GSAP,Motion for animations. My services cover everything from building custom UI components and integrating APIs to deploying production-ready applications with scalability and maintainability in mind.",
-  },
-  {
-    question:
-      "How long does it usually take to build a frontend project, and what factors influence the timeline?",
-    answer:
-      "The duration of a project depends heavily on its scope and technical complexity. A minimal landing page with animations might take around 2–3 weeks, while a complex web application with authentication, dashboards, and API integrations could span several months. Factors that influence timelines include the number of features, animation complexity, third-party integrations, and revision cycles. During the initial planning stage, I always provide a detailed estimate with milestones to keep expectations transparent and the workflow predictable.",
-  },
-  {
-    question: "What technologies do you typically use when building a backend?",
-    answer:
-      "The technology stack depends on the project needs, but I commonly use frameworks like Laravel, Node.js (with Express or NestJS), also i work with nextjs or similar modern backend tools. For databases, I work with PostgreSQL, MySQL, or SQLite depending on scale. I also integrate authentication systems, background jobs, caching layers like Redis, and cloud storage services when needed to ensure scalability and performance.",
-  },
-  {
-    question: "How do you ensure backend security and data protection?",
-    answer:
-      "Security is implemented at multiple layers. I use secure authentication methods, hashed passwords, role-based authorization, request validation, and protection against common attacks like SQL injection and XSS. Sensitive data is encrypted, API access is rate-limited, and regular security best practices are followed throughout development to ensure user data remains protected.",
-  },
-  {
-    question:
-      "What methods do you use to ensure websites are responsive, accessible, and visually consistent across devices?",
-    answer:
-      "I build using a mobile-first, component-driven approach. Each layout and UI element is designed to adapt fluidly to different screen sizes using CSS Grid, Flexbox, and Tailwind CSS utilities. I also follow accessibility best practices (WCAG standards) — ensuring semantic HTML, keyboard navigation, and screen-reader compatibility. To guarantee consistency, I test across real devices and multiple browsers, using both manual and automated checks to ensure the interface feels cohesive everywhere.",
-  },
-  {
-    question:
-      "Can you help optimize the performance of an existing website or web application?",
-    answer:
-      "Absolutely. This includes techniques like code splitting, lazy loading, and efficient bundling for reduced load times. I optimize images and assets, minimize render-blocking resources, and fine-tune animations for smoothness. I also use tools like Lighthouse and WebPageTest to measure Core Web Vitals and ensure measurable improvements in performance, SEO, and accessibility. My goal is not just to make your site faster, but to create a smoother and more enjoyable experience for your users.",
-  },
-  // {
-  //   question: "Should I cover pricing?",
-  //   answer:
-  //     "If youre comfortable sharing, outline the formats you offer: fixed bids, retainers, sprints, or day rates. Even a simple range provides clarity for new leads.",
-  // },
-  {
-    question: "What if someone needs more info?",
-    answer:
-      "Contact me directly through the form so I can provide tailored answers and next steps, or by email hamed.ajaj@proton.me. ",
-  },
+const businessFaqItems: FaqItem[] = [
+	{
+		question: "What kind of software do you build?",
+		answer:
+			"I build custom software for businesses, including internal systems, ERP platforms, client portals, SaaS products, web applications, and mobile apps.",
+	},
+	{
+		question: "Can you build a complete system from scratch?",
+		answer:
+			"Yes. I can handle the full process from planning and architecture to development, deployment, and ongoing improvements.",
+	},
+	{
+		question: "How much does a project usually cost?",
+		answer:
+			"It depends on the scope and complexity. Smaller projects can start at a few hundred dollars, while larger business systems and SaaS platforms are priced based on requirements and development time.",
+	},
+	{
+		question: "How long does a project take?",
+		answer:
+			"Most projects take anywhere from a few weeks to a few months depending on features, integrations, and business requirements.",
+	},
+	{
+		question: "Do you provide ongoing support and maintenance?",
+		answer:
+			"Yes. After launch, I can continue maintaining the system, fixing issues, and adding new features as your business grows.",
+	},
+	{
+		question: "Can you improve or rebuild an existing system?",
+		answer:
+			"Absolutely. Whether it's performance issues, outdated technology, poor user experience, or missing features, I can help modernize and improve existing software.",
+	},
+	{
+		question: "Can you integrate third-party services?",
+		answer:
+			"Yes. I regularly integrate payment gateways, WhatsApp automation, APIs, authentication systems, analytics tools, and other business services.",
+	},
+	{
+		question: "Do you build mobile applications too?",
+		answer:
+			"Yes. Depending on the project, I can build mobile applications that work across iOS and Android alongside web platforms.",
+	},
+	{
+		question: "What technologies do you use?",
+		answer:
+			"I choose technologies based on the project's needs, but I commonly work with React, Next.js, TypeScript, Node.js, .NET, PostgreSQL, Docker, and modern cloud infrastructure.",
+	},
+	{
+		question: "How do we get started?",
+		answer:
+			"Simply reach out with your idea or business problem. We'll discuss requirements, define the scope, and determine the best solution for your needs.",
+	},
 ];
 
-export const faqItemsMobile: FaqItem[] = [
-  {
-    question:
-      "What kind of frontend development services do you specialize in, and what technologies do you primarily use?",
-    answer:
-      "I focus on building modern, high-performance web applications with an emphasis on clean architecture, smooth interactions, and strong visual appeal. My core stack includes React, TypeScript, and Next.js, along with tools like Tailwind CSS and GSAP,Motion for animations. My services cover everything from building custom UI components and integrating APIs to deploying production-ready applications with scalability and maintainability in mind.",
-  },
-  {
-    question:
-      "How long does it usually take to build a frontend project, and what factors influence the timeline?",
-    answer:
-      "The duration of a project depends heavily on its scope and technical complexity. A minimal landing page with animations might take around 2–3 weeks, while a complex web application with authentication, dashboards, and API integrations could span several months. Factors that influence timelines include the number of features, animation complexity, third-party integrations, and revision cycles. During the initial planning stage, I always provide a detailed estimate with milestones to keep expectations transparent and the workflow predictable.",
-  },
-  {
-    question: "What technologies do you typically use when building a backend?",
-    answer:
-      "The technology stack depends on the project needs, but I commonly use frameworks like Laravel, Node.js (with Express or NestJS), also i work with nextjs or similar modern backend tools. For databases, I work with PostgreSQL, MySQL, or SQLite depending on scale. I also integrate authentication systems, background jobs, caching layers like Redis, and cloud storage services when needed to ensure scalability and performance.",
-  },
-  {
-    question: "How do you ensure backend security and data protection?",
-    answer:
-      "Security is implemented at multiple layers. I use secure authentication methods, hashed passwords, role-based authorization, request validation, and protection against common attacks like SQL injection and XSS. Sensitive data is encrypted, API access is rate-limited, and regular security best practices are followed throughout development to ensure user data remains protected.",
-  },
-  {
-    question:
-      "What methods do you use to ensure websites are responsive, accessible, and visually consistent across devices?",
-    answer:
-      "I build using a mobile-first, component-driven approach. Each layout and UI element is designed to adapt fluidly to different screen sizes using CSS Grid, Flexbox, and Tailwind CSS utilities. I also follow accessibility best practices (WCAG standards) — ensuring semantic HTML, keyboard navigation, and screen-reader compatibility. To guarantee consistency, I test across real devices and multiple browsers, using both manual and automated checks to ensure the interface feels cohesive everywhere.",
-  },
-  {
-    question:
-      "Can you help optimize the performance of an existing website or web application?",
-    answer:
-      "Absolutely. This includes techniques like code splitting, lazy loading, and efficient bundling for reduced load times. I optimize images and assets, minimize render-blocking resources, and fine-tune animations for smoothness. I also use tools like Lighthouse and WebPageTest to measure Core Web Vitals and ensure measurable improvements in performance, SEO, and accessibility. My goal is not just to make your site faster, but to create a smoother and more enjoyable experience for your users.",
-  },
-  // {
-  //   question: "Should I cover pricing?",
-  //   answer:
-  //     "If youre comfortable sharing, outline the formats you offer: fixed bids, retainers, sprints, or day rates. Even a simple range provides clarity for new leads.",
-  // },
-  {
-    question: "What if someone needs more info?",
-    answer:
-      "Contact me directly through the form so I can provide tailored answers and next steps, or by email hamed.ajaj@proton.me. ",
-  },
-];
+export const faqItems = businessFaqItems;
+export const faqItemsMobile = businessFaqItems;
