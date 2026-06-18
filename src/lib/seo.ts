@@ -238,3 +238,32 @@ export function getBlogPostSeo(post: BlogSeoPayload): HeadTags {
 
   return { meta, links, scripts };
 }
+
+export function getBlogIndexSeo(): HeadTags {
+  const canonical = absoluteUrl("/blog");
+  const title = "Blog | Hamed Ajaj";
+  const description =
+    "Articles, case studies, and practical lessons from building custom software for businesses.";
+
+  const meta: MetaTag[] = [
+    { title },
+    { name: "description", content: description },
+    { name: "author", content: AUTHOR },
+    { name: "keywords", content: DEFAULT_KEYWORDS.join(", ") },
+    { property: "og:type", content: "website" },
+    { property: "og:site_name", content: SITE_NAME },
+    { property: "og:url", content: canonical },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:image", content: DEFAULT_IMAGE },
+    { name: "twitter:card", content: "summary_large_image" },
+    { property: "twitter:url", content: canonical },
+    { property: "twitter:title", content: title },
+    { property: "twitter:description", content: description },
+    { property: "twitter:image", content: DEFAULT_IMAGE },
+  ];
+
+  const links: LinkTag[] = [{ rel: "canonical", href: canonical }];
+
+  return { meta, links };
+}

@@ -57,6 +57,7 @@ const IconInstagram = (props: React.SVGProps<SVGSVGElement>) => (
 export type FooterLink = {
   label: string;
   href: string;
+  type: "section" | "route";
 };
 
 export type FooterSocialLink = {
@@ -66,12 +67,12 @@ export type FooterSocialLink = {
 };
 
 export const footerLinks: FooterLink[] = [
-  { label: "Services", href: "#services" },
-  { label: "Works", href: "#works" },
+  { label: "Services", href: "#services", type: "section" },
+  { label: "Works", href: "#works", type: "section" },
   // { label: "Showcase", href: "#showcase" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Blog", href: "#blog" },
+  { label: "Testimonials", href: "#testimonials", type: "section" },
+  { label: "FAQ", href: "#faq", type: "section" },
+  { label: "Blog", href: "/blog", type: "route" },
 ];
 
 export const footerSocialLinks: FooterSocialLink[] = [

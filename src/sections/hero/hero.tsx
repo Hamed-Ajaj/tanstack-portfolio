@@ -173,9 +173,9 @@ export default function Hero() {
     <section
       id="hero"
       ref={heroRef}
-      className="relative flex h-[50vh] w-full px-4 md:px-16 flex-col items-center justify-center gap-4"
+      className="relative flex min-h-[72svh] w-full flex-col items-center justify-center gap-5 px-4 pb-10 pt-24 md:h-[50vh] md:px-16 md:pb-0 md:pt-0"
     >
-      <div className="relative z-10 flex flex-col items-center gap-2">
+      <div className="relative z-10 flex w-full max-w-4xl flex-col items-center gap-3">
         <div ref={badgeRef} className="w-fit">
           <ShinyBadge>
             <FrameIcon aria-hidden="true" className="size-3.5" />
@@ -184,22 +184,26 @@ export default function Hero() {
         </div>
         <h1
           ref={titleRef}
-          className="text-3xl text-center text-foreground font-medium text-balance max-w-3xl"
+          className="max-w-[15ch] text-center text-[2.1rem] font-medium leading-[1.02] text-pretty text-foreground sm:max-w-3xl sm:text-4xl md:text-5xl"
         >
           Custom software that helps your business run smoother and grow faster
         </h1>
         <p
           ref={descriptionRef}
-          className="text-base md:text-lg text-center text-foreground/70 font-medium text-balance leading-relaxed max-w-xl"
+          className="max-w-[34ch] text-center text-[1.02rem] font-medium leading-7 text-pretty text-foreground/70 sm:max-w-2xl sm:text-base md:text-lg"
         >
           I design and build business software that replaces manual processes,
           simplifies operations, and helps teams work more efficiently.
         </p>
       </div>
-      <div ref={actionsRef} className="relative z-10  flex items-center gap-2">
+      <div
+        ref={actionsRef}
+        className="relative z-10 flex w-full max-w-sm flex-col items-stretch gap-2 sm:max-w-none sm:flex-row sm:items-center sm:justify-center"
+      >
         <Button
           variant="default"
           size="md"
+          className="w-full sm:w-auto"
           onClick={() => scrollTo("#contact")}
         >
           Let's discuss your project
@@ -207,12 +211,13 @@ export default function Hero() {
         <Button
           variant="secondary"
           size="md"
+          className="w-full sm:w-auto"
           onClick={() => scrollTo("#works")}
         >
           View selected work
         </Button>
       </div>
-      <p className="relative z-10 text-center text-sm font-medium text-foreground/55 text-balance max-w-lg">
+      <p className="relative z-10 max-w-[32ch] text-center text-[0.95rem] font-medium leading-6 text-pretty text-foreground/55 sm:max-w-lg sm:text-sm">
         Built systems for clinics, organizations, and service businesses.
       </p>
 

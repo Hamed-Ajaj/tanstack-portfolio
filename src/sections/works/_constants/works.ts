@@ -3,10 +3,10 @@ import maweedCover from "@/assets/projects/maweed-cover.png";
 import shabakatCover from "@/assets/projects/shabakat-cover.png";
 
 export interface WorksItem {
+	slug: string;
 	image: string;
 	title: string;
 	description: string;
-	link?: string;
 	backdropVariant?: "teal-glow";
 	frameClassName?: string;
 	imageClassName?: string;
@@ -14,20 +14,21 @@ export interface WorksItem {
 }
 
 export const works: WorksItem[] = [
-  {
-    image: najmErpCover,
+	{
+		slug: "najm-erp-system",
+		image: najmErpCover,
 		title: "Najm ERP System",
 		description:
 			"Enterprise ERP platform centralizing accounting, HR, content management, and organizational operations.",
-		link: "https://najm-erp.com/",
 		backdropVariant: "teal-glow",
 		frameClassName:
 			"flex items-center justify-center overflow-hidden rounded-md border border-border/80",
 		imageClassName:
-			"h-full w-full max-w-[78%] object-contain object-center p-5 md:max-w-[70%] md:p-7",
+			"h-full w-full max-w-[84%] object-contain object-center p-4 md:max-w-[70%] md:p-7",
 		contentTone: "light",
 	},
 	{
+		slug: "maweed",
 		image: maweedCover,
 		title: "Maweed",
 		description:
@@ -36,10 +37,11 @@ export const works: WorksItem[] = [
 		frameClassName:
 			"flex items-center justify-center overflow-hidden rounded-md border border-border/80",
 		imageClassName:
-			"h-full w-full max-w-[82%] object-contain object-center p-4 md:max-w-[74%] md:p-6",
+			"h-full w-full max-w-[88%] object-contain object-center p-3 md:max-w-[74%] md:p-6",
 		contentTone: "light",
 	},
 	{
+		slug: "shabakat",
 		image: shabakatCover,
 		title: "Shabakat",
 		description:
@@ -48,7 +50,7 @@ export const works: WorksItem[] = [
 		frameClassName:
 			"flex items-center justify-center overflow-hidden rounded-md border border-border/80",
 		imageClassName:
-			"h-full w-full max-w-[88%] object-contain object-center p-4 md:max-w-[80%] md:p-6",
+			"h-full w-full max-w-[92%] object-contain object-center p-3 md:max-w-[80%] md:p-6",
 		contentTone: "light",
 	},
 ];

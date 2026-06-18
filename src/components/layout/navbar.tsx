@@ -1,4 +1,5 @@
 import { useGSAP } from "@gsap/react";
+import { useLocation, useRouter } from "@tanstack/react-router";
 import { useEffect, useId, useRef, useState } from "react";
 import { LogoIcon } from "@/components/icons/logo-icon";
 import { Button } from "@/components/ui/button";
@@ -15,12 +16,12 @@ import { cn } from "@/lib/utils";
 registerGsapPlugins();
 
 const NAV_LINKS = [
-  { label: "Services", target: "#services" },
-  { label: "Works", target: "#works" },
+  { label: "Services", target: "#services", type: "section" },
+  { label: "Works", target: "#works", type: "section" },
   // { label: "Showcase", target: "#showcase" },
   // { label: "Testimonials", target: "#testimonials" },
-  { label: "FAQ", target: "#faq" },
-  { label: "Blog", target: "#blog" },
+  { label: "FAQ", target: "#faq", type: "section" },
+  { label: "Blog", target: "/blog", type: "route" },
 ] as const;
 
 const colorWithOpacity = (token: string, opacity: number) => {
@@ -30,6 +31,8 @@ const colorWithOpacity = (token: string, opacity: number) => {
 };
 
 export function Navbar() {
+  const router = useRouter();
+  const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" ? window.innerWidth < 1024 : false,
@@ -250,7 +253,29 @@ export function Navbar() {
 
   const handleScroll = (target: string) => {
     setMobileMenuOpen(false);
-    scrollTo(target);
+    if (location.pathname === "/") {
+      scrollTo(target);
+      return;
+    }
+
+    void router.navigate({
+      to: "/",
+      hash: target.replace("#", ""),
+    });
+  };
+
+  const handleNavigation = (
+    target: (typeof NAV_LINKS)[number]["target"],
+    type: (typeof NAV_LINKS)[number]["type"],
+  ) => {
+    setMobileMenuOpen(false);
+
+    if (type === "route") {
+      void router.navigate({ to: target });
+      return;
+    }
+
+    handleScroll(target);
   };
 
   return (
@@ -291,7 +316,7 @@ export function Navbar() {
               variant="ghost"
               size="sm"
               className="text-xs text-foreground/70 hover:text-foreground hover:bg-transparent"
-              onClick={() => handleScroll(link.target)}
+              onClick={() => handleNavigation(link.target, link.type)}
               role="menuitem"
             >
               {link.label}
@@ -367,7 +392,7 @@ export function Navbar() {
               variant="ghost"
               size="sm"
               className="justify-start px-0 text-foreground/70 hover:text-foreground"
-              onClick={() => handleScroll(link.target)}
+              onClick={() => handleNavigation(link.target, link.type)}
               role="menuitem"
             >
               {link.label}

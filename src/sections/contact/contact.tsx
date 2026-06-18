@@ -16,7 +16,18 @@ export default function Contact() {
       badgeText="Contact"
       badgeIcon={<PaperPlaneIcon aria-hidden="true" className="size-3.5" />}
     >
-      <ContactFormCard />
+      <div className="relative z-10 flex w-full flex-col items-center gap-5">
+        <ContactFormCard />
+        <p className="text-center text-sm text-foreground/70">
+          Prefer email directly? Reach out at{" "}
+          <a
+            href="mailto:hamed.ajaj@proton.me"
+            className="text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-foreground/80"
+          >
+            hamed.ajaj@proton.me
+          </a>
+        </p>
+      </div>
       <GridPattern
         squares={[
           [4, 4],

@@ -1,4 +1,5 @@
 import type { MouseEvent } from "react";
+import { useLocation, useRouter } from "@tanstack/react-router";
 import { LogoIcon } from "@/components/icons/logo-icon";
 import { useLenis } from "@/lib/lenis-context";
 import {
@@ -8,14 +9,31 @@ import {
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const router = useRouter();
+  const location = useLocation();
   const { scrollTo } = useLenis();
 
   const handleNavigationClick = (
     event: MouseEvent<HTMLAnchorElement>,
     target: string,
+    type: "section" | "route",
   ) => {
     event.preventDefault();
-    scrollTo(target);
+
+    if (type === "route") {
+      void router.navigate({ to: target });
+      return;
+    }
+
+    if (location.pathname === "/") {
+      scrollTo(target);
+      return;
+    }
+
+    void router.navigate({
+      to: "/",
+      hash: target.replace("#", ""),
+    });
   };
 
   return (
@@ -27,10 +45,15 @@ export default function Footer() {
               <LogoIcon className="size-4" />
               <p className="text-sm font-medium">Hamed Ajaj</p>
             </div>
-            {/* <p className="text-xs text-foreground/70 leading-relaxed max-w-xs"> */}
-            {/*   Use this placeholder copy to describe your focus, niche, or the */}
-            {/*   type of projects you love working on. */}
-            {/* </p> */}
+            <div className="space-y-1 text-xs text-foreground/70">
+              <p>Custom software, internal systems, and SaaS for businesses.</p>
+              <a
+                href="mailto:hamed.ajaj@proton.me"
+                className="inline-block text-foreground/80 transition-colors hover:text-foreground"
+              >
+                hamed.ajaj@proton.me
+              </a>
+            </div>
           </div>
 
           <div className="flex items-center gap-3">
@@ -56,7 +79,9 @@ export default function Footer() {
               <li key={link.label}>
                 <a
                   href={link.href}
-                  onClick={(event) => handleNavigationClick(event, link.href)}
+                  onClick={(event) =>
+                    handleNavigationClick(event, link.href, link.type)
+                  }
                   className="hover:text-foreground rounded transition-[color,shadow] duration-100 ease-out-quad focus-visible:ring-1 focus-visible:ring-ring/50 focus-visible:ring-offset-1 focus-visible:ring-offset-ring-offset/50 focus-visible:outline-none"
                 >
                   {link.label}
@@ -71,8 +96,8 @@ export default function Footer() {
         <div className="w-full space-y-2 md:space-y-0 md:max-w-5xl mx-auto flex flex-col md:flex-row gap-1 px-4 py-4 md:px-2 items-center justify-between">
           <p>© {currentYear} Hamed Ajaj. All rights reserved.</p>
           <p>
-            Full-stack developer for small businesses & startups. Open to
-            freelance and side projects.
+            Building custom software, SaaS platforms, and internal systems for
+            businesses.
           </p>
         </div>
       </div>
