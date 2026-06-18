@@ -8,6 +8,7 @@ import Hero from "@/sections/hero/hero";
 import Services from "@/sections/services/services";
 // import Showcase from "@/sections/showcase/showcase";
 // import Testimonials from "@/sections/testimonials/testimonials";
+// import Highlights from "@/sections/highlights/highlights";
 import Works from "@/sections/works/works";
 
 export const Route = createFileRoute("/")({
@@ -21,6 +22,7 @@ function App() {
     <main className="mx-auto flex flex-col items-center justify-start w-full md:w-7xl md:border-x border-border divide-y divide-border/80">
       <Hero />
       <Services />
+      {/* <Highlights /> */}
       <Works />
       {/*<Showcase />*/}
       {/* <Testimonials /> */}

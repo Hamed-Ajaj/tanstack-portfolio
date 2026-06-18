@@ -96,54 +96,24 @@ export const serviceItems: ServiceItem[] = [
 
 export const bestPractices: ServiceItem[] = [
   {
-    name: "Principle 01 — Lead With Outcomes",
+    name: "Maintainable architecture",
     description:
-      "A quick reminder to mention the measurable change you bring, not just the toolset you use to get there.",
+      "Systems are structured so future features, fixes, and onboarding do not become expensive.",
   },
   {
-    name: "Principle 02 — Keep Teams In The Loop",
+    name: "Clear documentation",
     description:
-      "Suggest how you handle weekly updates, async notes, or Loom recaps so clients know exactly what's moving.",
+      "Important flows and technical decisions are documented so teams are not dependent on one person.",
   },
   {
-    name: "Principle 03 — Design For Handoff",
+    name: "Stable delivery process",
     description:
-      "Explain how you package deliverables, documentation, or recordings so work is easy to extend later on.",
+      "Projects move through planning, implementation, QA, and deployment with fewer surprises.",
   },
   {
-    name: "Principle 04 — Prototype Early",
+    name: "Long-term support readiness",
     description:
-      "Encourage readers to reference the prototypes, sandboxes, or experiments you typically run up front.",
-  },
-  {
-    name: "Principle 05 — Sweat The Details",
-    description:
-      "Use this space to note your obsession with accessibility, polish, or animation that sets you apart.",
-  },
-  {
-    name: "Principle 06 — Build For Change",
-    description:
-      "Remind teams that you keep architecture flexible, future-friendly, and ready for whatever V2 demands.",
-  },
-  {
-    name: "Principle 07 — Document The Journey",
-    description:
-      "Point to how you capture learnings, write internal notes, or ship looms that demystify key decisions.",
-  },
-  {
-    name: "Principle 08 — Test Relentlessly",
-    description:
-      "Reserve this bullet for your preferred QA cadence, tooling, or review rituals before anything ships.",
-  },
-  {
-    name: "Principle 09 — Collaborate Openly",
-    description:
-      "Call out the cadence of workshops, office hours, or async standups you host with product partners.",
-  },
-  {
-    name: "Principle 10 — Iterate After Launch",
-    description:
-      "Highlight how you stay close to analytics, user feedback, or retention data to plan the next release.",
+      "The final system is easier to maintain, improve, and hand over after launch.",
   },
 ];
 
@@ -165,11 +135,10 @@ export const serviceFeatures: ServiceFeature[] = [
     className: "col-span-1",
     background: <ConvertingCardContent icons={convertingCardIcons} />,
   },
-
   {
-    name: "Clean Code",
+    name: "Reliable Engineering",
     description:
-      "Writing clean, scalable, and maintainable code built on modern standards.",
+      "Building systems that stay maintainable, documented, and easier to extend over time.",
     href: "#",
     className: "col-span-1",
     background: <CleanCodeCardContent items={bestPractices} />,
